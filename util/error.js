@@ -1,4 +1,4 @@
-const AppError = require('../middlewares/errorHandler')
+const AppError = require("../middlewares/errorHandler");
 
 const handleCAstDBError = (err) => {
   const message = `resource not found, invalid ${err.path}`;
@@ -28,7 +28,7 @@ module.exports = (err, req, res, next) => {
 
   // wrong mongoose Object Id Error
   let error = { ...err };
-  
+
   if (err.name === "CastError") err = handleCAstDBError(err);
 
   // hadlimg mongoose validation Error

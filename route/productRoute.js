@@ -5,7 +5,7 @@
 
 const express = require('express')
 const { createProduct, getAllProduct } = require('../controller/productControllers')
-const { uploadProductImage, uploadimgCloud } = require('../controller/uploadController')
+const { uploadProductImage, uploadingCloud } = require('../controller/uploadController')
 
 const router = express()
 
@@ -14,7 +14,7 @@ const router = express()
 router.route('/').post(createProduct).get(getAllProduct)
 
 // router.route('/uploads').post(uploadProductImage)
-router.route('/uploads').post(uploadimgCloud)
+router.route('/uploads').post(uploadingCloud)
 
 
 

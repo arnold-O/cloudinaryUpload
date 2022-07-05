@@ -18,6 +18,14 @@ exports.uploadProductImage = catchAsyncWrapper(async(req,res,next)=>{
 
 exports.uploadimgCloud = catchAsyncWrapper(async (req, res, next)=>{
 
-    const result = await cloudinary.uploader.upload()
+    const result = await cloudinary.uploader.upload(req.files.image.tempFilePath, {
+        use_filename:true,
+        folder:'fileupload'
+    })
+
+    res.status(200).json({
+        image: result.securre_url
+    })
+    
 
 })

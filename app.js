@@ -16,7 +16,7 @@ cloudinary.config({
 
 app.use(express.static("./public"));
 app.use(express.json());
-app.use(fileupload());
+app.use(fileupload({useTempFiles:true}));
 
 // routes
 const ProductRoutes = require("./route/productRoute");
